@@ -27,9 +27,9 @@ class email_listener
      * @param  object  $event
      * @return void
      */
-    public function handle(mail_event $event)
+    public function handle($event)
     {
-        $aa = $event->aa;
-        Mail::to('shorunke99@gmail.com')->send(new first_email($user));
+        //$aa = $event->aa;
+        Mail::to('shorunke99@gmail.com')->send(new first_email($aa));
     }
 }

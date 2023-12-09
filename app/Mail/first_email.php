@@ -12,16 +12,16 @@ use Illuminate\Queue\SerializesModels;
 class first_email extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $user;
+    protected $aa;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($aa)
     {
-        return $this->user = $user;
+        return $this->aa = $aa;
         //
     }
 
