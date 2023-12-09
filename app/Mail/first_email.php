@@ -21,7 +21,7 @@ class first_email extends Mailable
      */
     public function __construct($aa)
     {
-        return $this->aa = $aa;
+        $this->aa = $aa;
         //
     }
 

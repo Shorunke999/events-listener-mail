@@ -6,10 +6,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\first_email;
+use App\Models\User;
 
 class email_listener
 {
-    protected $user;
+    //protected $aa;
     /**
      * Create the event listener.
      *
@@ -17,8 +18,7 @@ class email_listener
      */
     public function __construct()
     {
-         //return $this->user = $user;
-        //
+         //return $this->aa = $aa;
     }
 
     /**
@@ -27,9 +27,9 @@ class email_listener
      * @param  object  $event
      * @return void
      */
-    public function handle($event)
+    public function handle( $event)
     {
-        //$aa = $event->aa;
+        $aa = User::factory()->make();
         Mail::to('shorunke99@gmail.com')->send(new first_email($aa));
     }
 }
