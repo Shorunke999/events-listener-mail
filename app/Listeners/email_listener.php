@@ -4,9 +4,10 @@ namespace App\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use app\Mail\first_email;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\first_email;
 
-class mail_event
+class email_listener
 {
     protected $user;
     /**
@@ -14,9 +15,10 @@ class mail_event
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct()
     {
-        $this->user = $user;
+         //return $this->user = $user;
+        //
     }
 
     /**
@@ -27,7 +29,7 @@ class mail_event
      */
     public function handle(mail_event $event)
     {
-        $ee = Mail::to('shorunke99@gmail.com')->send(new first_email($user));
-        //
+        $aa = $event->aa;
+        Mail::to('shorunke99@gmail.com')->send(new first_email($user));
     }
 }

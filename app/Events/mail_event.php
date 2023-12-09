@@ -10,18 +10,18 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class mail_event implements ShouldBroadcast
+class mail_event 
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    protected $user;
+    protected $aa;
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($aa)
     {
-        return $this->user = $user;
+       $this->aa = $aa;
         //
     }
 

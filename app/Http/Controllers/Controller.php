@@ -23,9 +23,8 @@ class Controller extends BaseController
         //return view('dashboard');
     //}
     public function voo(Request $ks){
-        $user = $ks->name;
-        //event(new mail_event($user));
-        Mail::to('shorunke99@gmail.com')->send(new first_email($user)); 
+        $aa = $ks->name;
+        event(new mail_event($aa));
         return ['result'=>'email is succesfully sent'];
     }
 }
